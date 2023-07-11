@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-deployment
+  namespace: <namespace> # Replace with your desired namespace name
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+        - name: web
+          image: <image-name> # Replace with the image name from your Docker build process
+          ports:
+            - containerPort: 5000
+          volumeMounts:
+            - name: https-volume
+              mountPath: /https
+      volumes:
+        - name: https-volume
+          hostPath:
+            path: /path/to/.aspnet/https # Replace with the path to the host directory containing the HTTPS files
+            type: Directory
