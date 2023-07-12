@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: web
-          image: ramyairganti/dotnet-web:latest # Replace with the image name from your Docker build process
+          image: nbyreddy/dockerdep-10-app:1.0.0 # Replace with the image name from your Docker build process
           ports:
             - containerPort: 5000
           volumeMounts:
