@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: web
-          image: srinivasmohan/dotnetdemo-web # Replace with the image name from your Docker build process
+          image: dotnetdemo-web:latest # Replace with the image name from your Docker build process
           ports:
             - containerPort: 5000
           volumeMounts:
