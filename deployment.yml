@@ -2,7 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: web-deployment
-  namespace: mynamespace # Replace with your desired namespace name
+  labels:
+   app: web
 spec:
   replicas: 3
   selector:
