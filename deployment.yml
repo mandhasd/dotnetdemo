@@ -2,10 +2,11 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: web-deployment
+  namespace: mynamespace
   labels:
    app: web
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: web
@@ -16,6 +17,6 @@ spec:
     spec:
       containers:
       - name: web
-        image: dotnetdemo-web:latest # Replace with the image name from your Docker build process
+        image: mynamespace/dotnetdemo:V1 # Replace with the image name from your Docker build process
         ports:
         - containerPort: 80
