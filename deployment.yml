@@ -14,7 +14,7 @@ spec:
         app: web
     spec:
       containers:
-        - name: web
-          image: dotnetdemo-web:latest # Replace with the image name from your Docker build process
-          ports:
-            - containerPort: 80
+      - name: web
+        image: dotnetdemo-web:latest # Replace with the image name from your Docker build process
+        ports:
+        - containerPort: 80
