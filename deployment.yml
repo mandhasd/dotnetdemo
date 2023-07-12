@@ -17,7 +17,7 @@ spec:
         - name: web
           image: dotnetdemo-web:latest # Replace with the image name from your Docker build process
           ports:
-            - containerPort: 5000
+            - containerPort: 80
           volumeMounts:
             - name: https-volume
               mountPath: /https
