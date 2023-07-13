@@ -6,7 +6,7 @@ metadata:
   labels:
    app: web
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: web
@@ -17,6 +17,8 @@ spec:
     spec:
       containers:
       - name: web
-        image: mynamespace/dotnetdemo:V1 # Replace with the image name from your Docker build process
+        image: testresgistry123.azurecr.io/dotnetdemo-web # Replace with the image name from your Docker build process
         ports:
         - containerPort: 80
+      imagePullSecrets:
+      - name: mysecret
